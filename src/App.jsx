@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Education from "./components/Education";
 import PortfolioShowcase from "./components/PortfolioShowcase";
 import Contact from "./components/Contact";
 import Background from "./components/Background";
@@ -13,6 +14,7 @@ export default function App() {
         <Navbar />
         <Hero />
         <About />
+        <Education />
         <PortfolioShowcase />
         <Contact />
       </div>

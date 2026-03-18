@@ -104,9 +104,8 @@ export default function About() {
         >
           {/* Download CV Button */}
           <a
-            href="https://drive.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/hiralalmahatocv.pdf"
+            download="hiralalmahatocv.pdf"
             className="flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all hover:shadow-lg hover:shadow-purple-500/30"
           >
             <FileText size={20} />

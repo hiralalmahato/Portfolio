@@ -7,6 +7,7 @@ export default function Navbar() {
   const links = [
     { name: "Home", hash: "#home" },
     { name: "About", hash: "#about" },
+    { name: "Education", hash: "#education" },
     { name: "Portfolio", hash: "#portfolio" },
     { name: "Contact", hash: "#contact" },
   ];
