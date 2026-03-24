@@ -104,8 +104,8 @@ export default function About() {
         >
           {/* Download CV Button */}
           <a
-            href="/hiralalmahatocv.pdf"
-            download="hiralalmahatocv.pdf"
+            href="/hiralalmahatocv2.pdf"
+            download="hiralalmahatocv2.pdf"
             className="flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all hover:shadow-lg hover:shadow-purple-500/30"
           >
             <FileText size={20} />
