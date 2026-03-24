@@ -1,7 +1,35 @@
 import { motion } from "framer-motion";
 import { FileText, Code2, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
 
 export default function About() {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadCV = async () => {
+    try {
+      setIsDownloading(true);
+      const response = await fetch("/hiralalmahatocv2.pdf");
+      
+      if (!response.ok) {
+        throw new Error("Failed to download CV");
+      }
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "hiralalmahatocv2.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Download error:", error);
+      alert("Failed to download CV. Please try again.");
+    } finally {
+      setIsDownloading(false);
+    }
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -103,14 +131,14 @@ export default function About() {
           className="flex flex-wrap justify-center gap-4 mb-16"
         >
           {/* Download CV Button */}
-          <a
-            href="/hiralalmahatocv2.pdf"
-            download="hiralalmahatocv2.pdf"
-            className="flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all hover:shadow-lg hover:shadow-purple-500/30"
+          <button
+            onClick={handleDownloadCV}
+            disabled={isDownloading}
+            className="flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all hover:shadow-lg hover:shadow-purple-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <FileText size={20} />
-            Download CV
-          </a>
+            {isDownloading ? "Downloading..." : "Download CV"}
+          </button>
 
           {/* View Projects Button */}
           <a
