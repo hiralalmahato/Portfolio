@@ -7,7 +7,7 @@ export default function Education() {
       institution: "Lovely Professional University",
       location: "Punjab, India",
       degree: "Bachelor of Technology - Computer Science and Engineering",
-      grade: "7.05 CGPA",
+      grade: "7.85 CGPA",
       duration: "August 2023 – Present (2027)",
       isCurrent: true,
     },
